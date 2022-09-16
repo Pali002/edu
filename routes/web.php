@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Test;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +38,30 @@ Route::get('/', function () {
 
 Route::get("teszt", [Test::class, "index"]);
 
-Route::get("/about/{name}", function($name) {
-    return view("about", ["name" => $name]);
-});
+// Route::get("/about", function() {
+
+//     $name = "Rio";
+//     $email = "Riogonzalo@meal.hu";
+
+//     return view("about", compact("name", "email"));
+// });
+
+// Route::get('/master', function () {
+//     return view('master.master');
+// });
+
+// Route::get("/about", [ServiceController::class, "index"]);
+// Route::get("/about-admin", function() {
+
+//     return view("admin.about_admin", ["names"
+//     => ["Béla", "Reni", "Ildi", "Karcsi"]]);
+// });
+
+// Route::get("/products", function() {
+//     return view("templates.products");
+// });
+
+
+Route::get("/uj-diak", [StudentController::class, "newStudent"]);
+
+Route::post("/submit-student", [StudentController::class, "submitStudent"]);
