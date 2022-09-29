@@ -1,4 +1,15 @@
 <h1>Tölts ki a mezőket</h1>
+
+@if($errors->any())
+    <ul>
+        @foreach($errors->all() as $error)
+            <li>
+                {{$error}}
+            </li>
+        @endforeach
+    </ul>
+@endif
+
 <form action="submit-student" method="post">
     {{csrf_field()}}
     <p>
