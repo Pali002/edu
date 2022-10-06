@@ -13,22 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('students', function (Blueprint $table) {
+        Schema::create('courses', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
-            $table->string("phone");
-            $table->integer("age");
+            $table->string("course");
+            $table->integer("price");
+            $table->foreignId("studentId");
             $table->timestamps();
         });
     }
-/*
-név
-email
-telefon
-életkor
-nem
-cím
-*/
+
     /**
      * Reverse the migrations.
      *
@@ -36,6 +29,6 @@ cím
      */
     public function down()
     {
-        Schema::dropIfExists('students');
+        Schema::dropIfExists('courses');
     }
 };

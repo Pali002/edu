@@ -65,3 +65,7 @@ Route::get("teszt", [Test::class, "index"]);
 Route::get("/uj-diak", [StudentController::class, "newStudent"]);
 
 Route::post("/submit-student", [StudentController::class, "submitStudent"]);
+
+Route::get("/diaklista", [StudentController::class, "listStudent"]);
+
+Route::get("/diakcomplet", [StudentController::class, "completStudent"]);
