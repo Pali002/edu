@@ -99,6 +99,50 @@ class StudentController extends Controller{
         echo "<pre>";
         print_r($students);
     }
+
+    // public function insertStudent() {
+    //     $lastId = DB::table("students") -> insertGetid([
+    //         "name" => "Gabi",
+    //         "phone" => 123456789,
+    //         "age" => 22
+    //     ]);
+
+    //     echo "Beszűrás megtörtént". $lastId;
+    // }
+
+    public function insertStudent() {
+        DB::table("students")->insert([
+            ["name" => "Laci", "phone" => 367572757, "age" => 31],
+            ["name" => "Mari", "phone" => 367352757, "age" => 21],
+            ["name" => "Edit", "phone" => 373553757, "age" => 23],
+        ]);
+        echo "<h1>Adatok elmentve</h1>";
+    }
+
+    public function updateStudent() {
+        DB::table("students")->where("id", 8)->update([
+            "name" => "Gizi",
+            "phone" => "246252521",
+            "age" => 21
+        ]);
+
+        echo "adatok frissitve";
+    }
+
+    public function upIn() {
+        DB::table("students")->updateOrInsert(
+            ["name" => "Béla"],
+            ["phone" => 234567891,
+            "age" => 24
+        ]);
+
+        echo "mukszik";
+    }
+
+    public function deleteStudent() {
+        DB::table("students")->truncate();
+    }
+
 }
 
         // $request->validate([
@@ -110,3 +154,4 @@ class StudentController extends Controller{
         //     "email.required" => "Email kitöltés kötelező!",
         //     "phone.required" => "Telefon kitöltés kötelező!",
         // ]);
+

@@ -19,7 +19,7 @@ class StudentSeeder extends Seeder
         DB::table("students")->insert([
             "name" =>"Boli",
             "phone" => "064043629",
-            "age" => 21,
+            "age" => 21
         ]);
     }
 }

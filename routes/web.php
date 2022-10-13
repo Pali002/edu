@@ -69,3 +69,11 @@ Route::post("/submit-student", [StudentController::class, "submitStudent"]);
 Route::get("/diaklista", [StudentController::class, "listStudent"]);
 
 Route::get("/diakcomplet", [StudentController::class, "completStudent"]);
+
+Route::get("/beszur", [StudentController::class, "insertStudent"]);
+
+Route::get("/update", [StudentController::class, "updateStudent"]);
+
+Route::get("/upin", [StudentController::class, "upIn"]);
+
+Route::get("/delete", [StudentController::class, "deleteStudent"]);
